@@ -10,6 +10,6 @@ private const val MAX_VALUE = 1000 - 1
  */
 fun solve01(): Int {
     return IntRange(0, MAX_VALUE)
-            .filter { it -> it % 3 == 0 || it % 5 == 0 }
-            .sum()
+        .filter { it -> it % 3 == 0 || it % 5 == 0 }
+        .sum()
 }

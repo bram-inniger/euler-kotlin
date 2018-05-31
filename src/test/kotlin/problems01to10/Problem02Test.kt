@@ -1,11 +1,12 @@
 package problems01to10
 
-import kotlin.test.assertEquals
 import org.junit.Test
+import kotlin.test.assertEquals
 
 class Problem02Test {
-    
-    @Test fun verifySolution() {
+
+    @Test
+    fun verifySolution() {
         assertEquals(4613732, solve02())
     }
 }

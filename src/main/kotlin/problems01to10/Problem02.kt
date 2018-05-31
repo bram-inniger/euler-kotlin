@@ -13,7 +13,7 @@ fun solve02() = fib()
 
 private tailrec fun fib(prev: Int = 1, prevPrev: Int = 0, evenSum: Int = 0): Int = when {
     prev > MAX_VALUE -> evenSum
-    else             -> {
+    else -> {
         val current = prev + prevPrev
         fib(prev = current, prevPrev = prev, evenSum = evenSum + if (current % 2 == 0) current else 0)
     }
