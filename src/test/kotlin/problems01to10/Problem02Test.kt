@@ -3,9 +3,9 @@ package problems01to10
 import kotlin.test.assertEquals
 import org.junit.Test
 
-class Problem01Test {
+class Problem02Test {
     
     @Test fun verifySolution() {
-        assertEquals(233168, solve01())
+        assertEquals(4613732, solve02())
     }
 }
