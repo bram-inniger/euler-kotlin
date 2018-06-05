@@ -12,6 +12,6 @@ repositories {
 }
 
 task<Wrapper>("wrapper") {
-    gradleVersion = "4.7"
+    gradleVersion = "4.8"
     distributionType = Wrapper.DistributionType.ALL
 }
