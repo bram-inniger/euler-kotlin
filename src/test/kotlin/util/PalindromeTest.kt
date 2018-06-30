@@ -4,7 +4,6 @@ import org.junit.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
-
 class PalindromeTest {
 
     @Test
