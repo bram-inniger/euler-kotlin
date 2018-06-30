@@ -39,4 +39,10 @@ class EratosthenesSieveTest {
     fun `Throws on negative out of bounds prime index`() {
         EratosthenesSieve(42).isPrime(-1)
     }
+
+    @Test
+    fun `Can get primes`() {
+        assertEquals(listOf(2, 3, 5), EratosthenesSieve(5).getPrimes())
+        assertEquals(listOf(2, 3, 5, 7, 11, 13, 17, 19), EratosthenesSieve(19).getPrimes())
+    }
 }
