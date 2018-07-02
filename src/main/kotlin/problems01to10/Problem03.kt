@@ -3,7 +3,7 @@ package problems01to10
 import util.EratosthenesSieve
 import kotlin.math.sqrt
 
-private const val NUMBER = 600851475143
+private const val NUMBER = 600851475143L
 
 /**
  * Largest prime factor
@@ -13,11 +13,8 @@ private const val NUMBER = 600851475143
  */
 fun solve03(): Int {
     val root = sqrt(NUMBER.toDouble()).toInt()
-    val sieve = EratosthenesSieve(root)
 
-    return IntRange(1, root)
+    return EratosthenesSieve(root).getPrimes()
         .reversed()
-        .filter(sieve::isPrime)
-        .find { it -> NUMBER % it.toLong() == 0L }
-            ?: throw IllegalStateException("No factor found")
+        .first { NUMBER % it == 0L }
 }

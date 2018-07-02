@@ -21,7 +21,7 @@ fun solve05(): Int {
         }
         .groupingBy { it.prime } // Group all these Factors by prime
         .reduce { _, acc, factor -> maxOf(acc, factor, compareBy(Factor::frequency)) } // Per prime pick the factor with the highest frequency
-        .map { it.value } // Map the Map.Entry back onto Factor
+        .map { it.value } // Map the Map.Entry<Int, Factor> back onto Factor
         .map { pow(it.prime, it.frequency) } // Get the power of each prime factor back with its frequency
         .reduce { acc, factor -> factor * acc } // Make the product of all these powers to get the smallest number evenly divisible by all numbers
 }

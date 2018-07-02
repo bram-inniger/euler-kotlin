@@ -11,10 +11,9 @@ private const val MAX_VALUE = 4_000_000
  */
 fun solve02() = fib()
 
-private tailrec fun fib(prev: Int = 1, prevPrev: Int = 0, evenSum: Int = 0): Int = when {
-    prev > MAX_VALUE -> evenSum
-    else -> {
+private tailrec fun fib(prev: Int = 1, prevPrev: Int = 0, evenSum: Int = 0): Int =
+    if (prev > MAX_VALUE) evenSum
+    else {
         val current = prev + prevPrev
         fib(prev = current, prevPrev = prev, evenSum = evenSum + if (current % 2 == 0) current else 0)
     }
-}
