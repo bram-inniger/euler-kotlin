@@ -5,24 +5,18 @@ package util
  * More info: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
  */
 class EratosthenesSieve(size: Int) {
-    private val sieve = if (size > 0) calculateSieve(size)
-    else throw IllegalArgumentException("Size cannot be smaller than one, but was $size")
-
-    private fun calculateSieve(size: Int): BooleanArray {
-        val sieve = BooleanArray(size + 1).apply { fill(true) }
-        sieve[0] = false
-        sieve[1] = false
-
-        for (i in 2..roundedSqrt(size)) {
-            if (sieve[i]) {
-                for (j in (i * i)..sieve.lastIndex step i) {
-                    sieve[j] = false
-                }
-            }
+    private val sieve = if (size < 2) throw IllegalArgumentException("Size $size contains no primes! ")
+    else BooleanArray(size + 1)
+        .apply { fill(true) }
+        .apply { this[0] = false }
+        .apply { this[1] = false }
+        .apply {
+            (2..roundedSqrt(size))
+                .asSequence()
+                .filter { this[it] }
+                .flatMap { ((it * it)..lastIndex step it).asSequence() }
+                .forEach { this[it] = false }
         }
-
-        return sieve
-    }
 
     /**
      * Check if a number contained in this sieve is prime or not.

@@ -26,6 +26,11 @@ class EratosthenesSieveTest {
     }
 
     @Test(expected = IllegalArgumentException::class)
+    fun `Throws on sieve sizes too small to contain primes`() {
+        EratosthenesSieve(1)
+    }
+
+    @Test(expected = IllegalArgumentException::class)
     fun `Throws on negative sieve size`() {
         EratosthenesSieve(-1)
     }
@@ -42,6 +47,7 @@ class EratosthenesSieveTest {
 
     @Test
     fun `Can get primes`() {
+        assertEquals(listOf(2), EratosthenesSieve(2).getPrimes())
         assertEquals(listOf(2, 3, 5), EratosthenesSieve(5).getPrimes())
         assertEquals(listOf(2, 3, 5, 7, 11, 13, 17, 19), EratosthenesSieve(19).getPrimes())
     }
