@@ -1,6 +1,7 @@
 package problems01to10
 
-import java.lang.Character.*
+import java.lang.Character.getNumericValue
+import java.lang.Character.isDigit
 
 private const val NR_ADJACENT_DIGITS = 13
 
@@ -16,8 +17,7 @@ fun solve08() = IntRange(0, number.size - NR_ADJACENT_DIGITS - 1)
         digits.map(Int::toLong)
             .reduce { acc, digit -> acc * digit }
     }
-    .sorted()
-    .last()
+    .max()!!
 
 private val number
     get() = Thread.currentThread().contextClassLoader.getResourceAsStream("Problem08.txt")

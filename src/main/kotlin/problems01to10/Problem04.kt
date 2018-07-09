@@ -18,4 +18,4 @@ fun solve04() = IntRange(SMALLEST_N_DIGIT_NUMBER, BIGGEST_N_DIGIT_NUMBER)
     }
     .map { it.first * it.second }
     .filter { isPalindrome(it.toString().toList()) }
-    .max() ?: throw IllegalArgumentException()
+    .max()!!

@@ -13,7 +13,7 @@ private const val PRIME_INDEX = 10_001 - 1
  * By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
  * What is the 10 001st prime number?
  */
-fun solve07() = EratosthenesSieve(calculateSieveSize()).getPrimes()[PRIME_INDEX]
+fun solve07() = EratosthenesSieve(sieveSize).getPrimes()[PRIME_INDEX]
 
 /**
  * Calculate a reasonable upper bound to use as sieve size, in a way that the sieve will contain the 10_001th prime.
@@ -29,6 +29,7 @@ fun solve07() = EratosthenesSieve(calculateSieveSize()).getPrimes()[PRIME_INDEX]
  * * Upper sieve size = 125278
  * Showing that indeed the upper bound is reasonably guessed!
  */
-private fun calculateSieveSize() = generateSequence(10.0) { i -> i * 1.1 }
-    .first { it / ln(it) > PRIME_INDEX }
-    .roundToInt()
+private val sieveSize
+    get() = generateSequence(10.0) { it * 1.1 }
+        .first { it / ln(it) > PRIME_INDEX }
+        .roundToInt()

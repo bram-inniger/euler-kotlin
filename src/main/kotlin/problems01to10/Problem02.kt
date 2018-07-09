@@ -9,9 +9,9 @@ private const val MAX_VALUE = 4_000_000
  * 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
  * By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
  */
-fun solve02() = fib()
+fun solve02() = fib(1, 0, 0)
 
-private tailrec fun fib(prev: Int = 1, prevPrev: Int = 0, evenSum: Int = 0): Int =
+private tailrec fun fib(prev: Int, prevPrev: Int, evenSum: Int): Int =
     if (prev > MAX_VALUE) evenSum
     else {
         val current = prev + prevPrev

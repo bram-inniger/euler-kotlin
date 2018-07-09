@@ -1,5 +1,8 @@
 package util
 
+import kotlin.math.roundToInt
+import kotlin.math.sqrt
+
 /**
  * Calculate the power of an integer base with a positive integer exponent, throwing on invalid inputs.
  */
@@ -9,3 +12,6 @@ fun pow(base: Int, exponent: Int) = when {
     else -> IntRange(1, exponent)
         .fold(1) { acc, _ -> acc * base }
 }
+
+fun roundedSqrt(number: Number) = sqrt(number.toDouble())
+    .roundToInt()

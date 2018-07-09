@@ -1,7 +1,5 @@
 package util
 
-import kotlin.math.sqrt
-
 /**
  * Classic implementation of the Sieve of Eratosthenes.
  * More info: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
@@ -15,7 +13,7 @@ class EratosthenesSieve(size: Int) {
         sieve[0] = false
         sieve[1] = false
 
-        for (i in 2..sqrt(size.toDouble()).toInt()) {
+        for (i in 2..roundedSqrt(size)) {
             if (sieve[i]) {
                 for (j in (i * i)..sieve.lastIndex step i) {
                     sieve[j] = false
