@@ -11,10 +11,9 @@ private const val SMALLEST_N_DIGIT_NUMBER = 100
  * A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
  * Find the largest palindrome made from the product of two 3-digit numbers.
  */
-fun solve04() = IntRange(SMALLEST_N_DIGIT_NUMBER, BIGGEST_N_DIGIT_NUMBER)
+fun solve04() = (SMALLEST_N_DIGIT_NUMBER..BIGGEST_N_DIGIT_NUMBER)
     .flatMap { i ->
-        IntRange(SMALLEST_N_DIGIT_NUMBER, i)
-            .map { j -> i to j }
+        (SMALLEST_N_DIGIT_NUMBER..i).map { j -> i to j }
     }
     .map { it.first * it.second }
     .filter { isPalindrome(it.toString().toList()) }

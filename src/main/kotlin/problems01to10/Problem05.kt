@@ -11,7 +11,7 @@ private const val MAX_VALUE = 20
  * 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
  * What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
  */
-fun solve05() = IntRange(1, MAX_VALUE) // Iterate over all numbers from 1 to 20
+fun solve05() = (1..MAX_VALUE) // Iterate over all numbers from 1 to 20
     .flatMap { number ->
         primes.map { prime -> Factor(prime, getFrequency(number, prime)) } // Decompose every number into its Factors
             .filter { factor -> factor.frequency > 0 } // Remove all the Factors that never occur (frequency = 0)

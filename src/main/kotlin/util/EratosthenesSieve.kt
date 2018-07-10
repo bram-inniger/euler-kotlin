@@ -11,8 +11,7 @@ class EratosthenesSieve(size: Int) {
         .apply { this[0] = false }
         .apply { this[1] = false }
         .apply {
-            (2..roundedSqrt(size))
-                .asSequence()
+            (2..roundedSqrt(size)).asSequence()
                 .filter { this[it] }
                 .flatMap { ((it * it)..lastIndex step it).asSequence() }
                 .forEach { this[it] = false }
@@ -27,6 +26,5 @@ class EratosthenesSieve(size: Int) {
     /**
      * Get all the primes contained in this sieve.
      */
-    fun getPrimes() = IntRange(0, sieve.lastIndex)
-        .filter { sieve[it] }
+    fun getPrimes() = (0..sieve.lastIndex).filter { sieve[it] }
 }

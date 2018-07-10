@@ -1,5 +1,6 @@
 package util
 
+import java.lang.StrictMath.multiplyExact
 import kotlin.math.roundToInt
 import kotlin.math.sqrt
 
@@ -9,8 +10,7 @@ import kotlin.math.sqrt
 fun pow(base: Int, exponent: Int) = when {
     base == 0 && exponent == 0 -> throw IllegalArgumentException("Base and exponent cannot both be 0, this is undefined")
     exponent < 0 -> throw IllegalArgumentException("Negative exponents lead to results that cannot be assigned to Int")
-    else -> IntRange(1, exponent)
-        .fold(1) { acc, _ -> acc * base }
+    else -> (1..exponent).fold(1) { acc, _ -> multiplyExact(acc, base) }
 }
 
 fun roundedSqrt(number: Number) = sqrt(number.toDouble())
