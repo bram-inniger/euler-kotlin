@@ -1,7 +1,6 @@
 package problems01to10
 
 import util.EratosthenesSieve
-import java.math.BigDecimal
 
 private const val MAX_VALUE = 2_000_000
 
@@ -12,6 +11,5 @@ private const val MAX_VALUE = 2_000_000
  * Find the sum of all the primes below two million.
  */
 fun solve10() = EratosthenesSieve(MAX_VALUE).getPrimes()
-    .map(::BigDecimal)
-    .fold(BigDecimal.ZERO, BigDecimal::add)
-    .longValueExact()
+    .map(Int::toLong)
+    .sum()
