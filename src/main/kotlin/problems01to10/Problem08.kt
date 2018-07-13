@@ -19,9 +19,8 @@ fun solve08() = (0 until number.size - NR_ADJACENT_DIGITS)
     }
     .max()!!
 
-private val number
-    get() = Thread.currentThread().contextClassLoader.getResourceAsStream("Problem08.txt")
-        .reader()
-        .readText()
-        .filter(::isDigit)
-        .map(::getNumericValue)
+private val number = Thread.currentThread().contextClassLoader.getResourceAsStream("Problem08.txt")
+    .reader()
+    .readText()
+    .filter(::isDigit)
+    .map(::getNumericValue)

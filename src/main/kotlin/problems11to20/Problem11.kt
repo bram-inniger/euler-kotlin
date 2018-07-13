@@ -26,8 +26,7 @@ fun solve11() =
         .map(Line::product) // Of all valid lines calculate the product of the adjacent numbers
         .max()!! // Get the greatest product
 
-private val grid
-    get() = Thread.currentThread().contextClassLoader.getResourceAsStream("Problem11.txt")
+private val grid = Thread.currentThread().contextClassLoader.getResourceAsStream("Problem11.txt")
         .reader()
         .readLines() // Results in List<String>, 1 String per line in the file
         .filter(String::isNotBlank) // Ignore blank lines
@@ -51,8 +50,7 @@ private data class Coordinate(internal val x: Int, internal val y: Int)
 private data class Line(private val origin: Coordinate, private val direction: Direction) {
 
     // Start from the coordinate, and walk in a Direction, to get 4 adjacent coordinates
-    private val line
-        get() = (0 until NR_ADJACENT).map {
+    private val line = (0 until NR_ADJACENT).map {
             Coordinate(
                 origin.x + it * direction.deltaX,
                 origin.y + it * direction.deltaY
@@ -60,8 +58,7 @@ private data class Line(private val origin: Coordinate, private val direction: D
         }
 
     // A line will be inside the rectangle if both ends of the line are inside
-    internal val isValid
-        get() = line.first().x in 0..grid[0].lastIndex &&
+    internal val isValid= line.first().x in 0..grid[0].lastIndex &&
                 line.first().y in 0..grid.lastIndex &&
                 line.last().x in 0..grid[0].lastIndex &&
                 line.last().y in 0..grid.lastIndex

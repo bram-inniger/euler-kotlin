@@ -24,8 +24,7 @@ fun solve05() = (1..MAX_VALUE) // Iterate over all numbers from 1 to 20
     .map { pow(it.prime, it.frequency) } // Get the power of each prime factor back with its frequency
     .reduce { acc, factor -> factor * acc } // Make the product of all these powers to get the smallest number evenly divisible by all numbers
 
-private val primes
-    get() = EratosthenesSieve(MAX_VALUE).getPrimes() // Pre-calculate all potential prime factors up until 20
+private val primes = EratosthenesSieve(MAX_VALUE).getPrimes() // Pre-calculate all potential prime factors up until 20
 
 /**
  * Calculate how many times a given prime "fits" in a number.

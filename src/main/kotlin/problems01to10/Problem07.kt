@@ -29,7 +29,6 @@ fun solve07() = EratosthenesSieve(sieveSize).getPrimes()[PRIME_INDEX]
  * * Upper sieve size = 125278
  * Showing that indeed the upper bound is reasonably guessed!
  */
-private val sieveSize
-    get() = generateSequence(10.0) { it * 1.1 }
-        .first { it / ln(it) > PRIME_INDEX }
-        .roundToInt()
+private val sieveSize = generateSequence(10.0) { it * 1.1 }
+    .first { it / ln(it) > PRIME_INDEX }
+    .roundToInt()

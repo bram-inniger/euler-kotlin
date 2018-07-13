@@ -20,12 +20,10 @@ fun solve09() = (1..TRIPLET_SUM)
 
 private data class PythagoreanTriplet(val a: Int, val b: Int, val c: Int) {
 
-    internal val valid
-        get() = a > 0 &&
-                b > 0 &&
-                c > 0 &&
-                a * a + b * b == c * c
+    internal val valid = a > 0 &&
+            b > 0 &&
+            c > 0 &&
+            a * a + b * b == c * c
 
-    internal val prod
-        get() = a * b * c
+    internal val prod = a * b * c
 }
