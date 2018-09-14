@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "1.2.51"
+    kotlin("jvm") version "1.2.70"
 }
 
 dependencies {
@@ -11,7 +11,5 @@ repositories {
     jcenter()
 }
 
-task<Wrapper>("wrapper") {
-    gradleVersion = "4.8"
-    distributionType = Wrapper.DistributionType.ALL
-}
+tasks.getByName<Wrapper>("wrapper").gradleVersion = "4.10.1"
+tasks.getByName<Wrapper>("wrapper").distributionType = Wrapper.DistributionType.ALL
