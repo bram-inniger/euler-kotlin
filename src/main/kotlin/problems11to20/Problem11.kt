@@ -27,11 +27,11 @@ fun solve11() =
         .max()!! // Get the greatest product
 
 private val grid = Thread.currentThread().contextClassLoader.getResourceAsStream("Problem11.txt")
-        .reader()
-        .readLines() // Results in List<String>, 1 String per line in the file
-        .filter(String::isNotBlank) // Ignore blank lines
-        .map { it.split(" ") } // Results in List<List<String>>, split every line in its separate String values
-        .map { it.map(String::toInt) } // Results in List<List<Int>>, the grid, by converting every single String into an Int
+    .reader()
+    .readLines() // Results in List<String>, 1 String per line in the file
+    .filter(String::isNotBlank) // Ignore blank lines
+    .map { it.split(" ") } // Results in List<List<String>>, split every line in its separate String values
+    .map { it.map(String::toInt) } // Results in List<List<Int>>, the grid, by converting every single String into an Int
 
 private fun doesGridFailValidation() = grid
     .map { it.size } // For the grid to be a rectangle, every row needs to have the same length
@@ -51,17 +51,17 @@ private data class Line(private val origin: Coordinate, private val direction: D
 
     // Start from the coordinate, and walk in a Direction, to get 4 adjacent coordinates
     private val line = (0 until NR_ADJACENT).map {
-            Coordinate(
-                origin.x + it * direction.deltaX,
-                origin.y + it * direction.deltaY
-            )
-        }
+        Coordinate(
+            origin.x + it * direction.deltaX,
+            origin.y + it * direction.deltaY
+        )
+    }
 
     // A line will be inside the rectangle if both ends of the line are inside
-    internal val isValid= line.first().x in 0..grid[0].lastIndex &&
-                line.first().y in 0..grid.lastIndex &&
-                line.last().x in 0..grid[0].lastIndex &&
-                line.last().y in 0..grid.lastIndex
+    internal val isValid = line.first().x in 0..grid[0].lastIndex &&
+        line.first().y in 0..grid.lastIndex &&
+        line.last().x in 0..grid[0].lastIndex &&
+        line.last().y in 0..grid.lastIndex
 
     // Calculate the product of the 4 adjacent numbers on the line
     internal val product

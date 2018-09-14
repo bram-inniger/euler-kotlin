@@ -13,4 +13,4 @@ private const val MAX_VALUE = 100
  * Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
  */
 fun solve06() = (1..MAX_VALUE).sum().let { it * it } -
-        (1..MAX_VALUE).map { it * it }.sum()
+    (1..MAX_VALUE).map { it * it }.sum()
