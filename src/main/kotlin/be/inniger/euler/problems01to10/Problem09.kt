@@ -1,4 +1,4 @@
-package problems01to10
+package be.inniger.euler.problems01to10
 
 private const val TRIPLET_SUM = 1000
 

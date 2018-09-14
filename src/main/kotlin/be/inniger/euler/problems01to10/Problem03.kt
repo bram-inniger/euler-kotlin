@@ -1,7 +1,7 @@
-package problems01to10
+package be.inniger.euler.problems01to10
 
-import util.EratosthenesSieve
-import util.roundedSqrt
+import be.inniger.euler.util.EratosthenesSieve
+import be.inniger.euler.util.roundedSqrt
 
 private const val NUMBER = 600851475143L
 

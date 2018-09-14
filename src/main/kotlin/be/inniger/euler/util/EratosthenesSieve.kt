@@ -1,4 +1,4 @@
-package util
+package be.inniger.euler.util
 
 /**
  * Classic implementation of the Sieve of Eratosthenes.

@@ -1,7 +1,7 @@
-package problems01to10
+package be.inniger.euler.problems01to10
 
-import util.EratosthenesSieve
-import util.pow
+import be.inniger.euler.util.EratosthenesSieve
+import be.inniger.euler.util.pow
 
 private const val MAX_VALUE = 20
 

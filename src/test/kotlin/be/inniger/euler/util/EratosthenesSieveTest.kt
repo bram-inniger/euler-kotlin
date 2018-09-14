@@ -1,4 +1,4 @@
-package util
+package be.inniger.euler.util
 
 import org.junit.Test
 import kotlin.test.assertEquals

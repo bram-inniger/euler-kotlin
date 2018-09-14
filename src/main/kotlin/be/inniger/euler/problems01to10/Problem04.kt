@@ -1,6 +1,6 @@
-package problems01to10
+package be.inniger.euler.problems01to10
 
-import util.isPalindrome
+import be.inniger.euler.util.isPalindrome
 
 private const val BIGGEST_N_DIGIT_NUMBER = 999
 private const val SMALLEST_N_DIGIT_NUMBER = 100

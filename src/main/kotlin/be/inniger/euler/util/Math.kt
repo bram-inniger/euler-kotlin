@@ -1,4 +1,4 @@
-package util
+package be.inniger.euler.util
 
 import java.lang.StrictMath.multiplyExact
 import kotlin.math.roundToInt

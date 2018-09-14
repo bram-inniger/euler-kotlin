@@ -1,4 +1,4 @@
-package problems01to10
+package be.inniger.euler.problems01to10
 
 import java.lang.Character.getNumericValue
 import java.lang.Character.isDigit

@@ -1,4 +1,4 @@
-package util
+package be.inniger.euler.util
 
 tailrec fun isPalindrome(list: List<Any>): Boolean = when {
     list.size <= 1 -> true

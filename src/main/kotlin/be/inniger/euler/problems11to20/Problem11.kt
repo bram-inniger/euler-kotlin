@@ -1,4 +1,4 @@
-package problems11to20
+package be.inniger.euler.problems11to20
 
 private const val NR_ADJACENT = 4
 

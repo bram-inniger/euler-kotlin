@@ -1,6 +1,6 @@
-package problems01to10
+package be.inniger.euler.problems01to10
 
-import util.EratosthenesSieve
+import be.inniger.euler.util.EratosthenesSieve
 import kotlin.math.ln
 import kotlin.math.roundToInt
 
